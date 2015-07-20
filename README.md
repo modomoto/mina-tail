@@ -32,6 +32,7 @@ require 'mina/git'
 task setup: :environment do
   ...
 end
+```
 
 ## Usage
 
