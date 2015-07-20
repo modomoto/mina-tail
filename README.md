@@ -64,7 +64,7 @@ Returns the last 20 lines of the `log/production.log`
 $ mina production tail:last file=unicorn.err.log lines=20
 ```
 
-Returns the last 20 lines of the `log/production.log`
+Returns the last 20 lines of the `log/unicorn.err.log`
 
 ## Contributing
 
