@@ -18,6 +18,9 @@ $ bundle
 
 Or install it yourself as:
 
+```rb
+$ gem install mina-tail
+```
 
 Require `mina/tail` in your `config/deploy.rb`:
 
