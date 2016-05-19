@@ -16,7 +16,7 @@ namespace :tail do
       queue! %[tail -f log/#{file}]
     end
   end
-  desc "Shows live environment logs"
+  desc "Show last lines of the environment logs"
   task :last => :environment do
     in_directory "#{app_path}" do
       lines = ENV['lines'] || 2000
