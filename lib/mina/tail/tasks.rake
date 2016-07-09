@@ -1,7 +1,7 @@
 namespace :tail do
-  desc "Lists logs available to tail"
+  desc 'Lists logs available to tail'
   task :list => :environment do
-    in_directory "#{app_path}" do
+    in_directory "#{current_path}" do
       log_path = "#{deploy_to!}/#{current_path!}/log"
       queue %{
         echo "-----> Log files in #{log_path}"
@@ -9,16 +9,18 @@ namespace :tail do
       }
     end
   end
-  desc "Shows live environment logs"
-  task :live => :environment do
-    in_directory "#{app_path}" do
+
+  desc 'Shows live environment logs'
+  task live: :environment do
+    in_directory "#{current_path}" do
       file = ENV['file'] || "#{rails_env}.log"
       queue! %[tail -f log/#{file}]
     end
   end
+
   desc "Show last lines of the environment logs"
   task :last => :environment do
-    in_directory "#{app_path}" do
+    in_directory "#{current_path}" do
       lines = ENV['lines'] || 2000
       file = ENV['file'] || "#{rails_env}.log"
       queue! %[tail -#{lines} log/#{file}]
