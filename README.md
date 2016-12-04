@@ -22,6 +22,8 @@ Or install it yourself as:
 $ gem install mina-tail
 ```
 
+_For support of Mina <1.0, stick with version 0.0.3 of this gem._
+
 Require `mina/tail` in your `config/deploy.rb`:
 
 ```rb
